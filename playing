@@ -1,0 +1,52 @@
+Solution
+Log in to the server using the credentials provided:
+
+ssh cloud_user@<PUBLIC_IP_ADDRESS>
+Create an Executable File with the Python Interpreter Path Instruction at the Beginning
+Create a file called asciiShape.py:
+
+touch asciiShape.py
+Make it executable:
+
+chmod +x asciiShape.py
+Open the file:
+
+vim asciiShape.py
+Type :set paste followed by i (for insert mode) to avoid adding unnecessary spaces and hashes when copying/pasting from the rest of the lab guide.
+
+Insert the instruction for the Python interpreter path:
+
+#!/usr/bin/python3
+Write Two for Loops, with One Nested in the Other, to Draw a Pyramid
+Press Enter twice to add a line break.
+
+Add the following to the file:
+
+length = 10
+astr = "*"
+for i in range(length):
+    for j in range(length-i):
+        print(" ", end='')
+    print(astr)
+    astr += "**"
+Write a Loop to Draw an Upside-Down Pyramid of Proportional Size that Aligns with the First Pyramid
+Press Enter twice to add a line break.
+
+Add the following to the file:
+
+length -= 1
+space = 1
+astrNum = ((length*2)-1)
+astr = "*" * astrNum
+for i in range(length):
+    print(" " + space * " " + astr)
+    astrNum -= 2
+    astr = "*" * astrNum
+    space += 1
+Test It by Saving and Executing the File
+Save and exit the file by pressing Escape followed by :wq.
+
+Execute the file:
+
+./asciiShape.py
+We should see a diamond shape made of asterisks.
